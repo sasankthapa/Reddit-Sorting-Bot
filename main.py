@@ -47,12 +47,12 @@ HTML='home/html'
 log='home/id.txt'
 
 createDirectories()
-startRedditBot('all')
+startRedditBot('Unity3D')
 labeler=Labeler.Labeler()
 
-for submission in sub.hot(limit=3):
+for submission in sub.hot(limit=6):
     if(submission not in posts_collected):
         posts_collected.append(submission.id)
-        print(submission.title)
+        print(labeler.label(submission))
 
 addToLogs()
