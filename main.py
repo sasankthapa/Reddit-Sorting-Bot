@@ -54,7 +54,8 @@ def createDirectories():
             posts_collected=list(filter(None,posts_collected))
 
 createDirectories()
-startRedditBot('Unity3D')
+x=input("Enter subreddit name ??")
+startRedditBot(str(x))
 labeler=Labeler.Labeler()
 
 data=[]
