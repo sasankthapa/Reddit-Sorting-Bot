@@ -3,6 +3,7 @@ import praw
 import Labeler
 from writer import writetofile as writer
 from writer import writedict as dictwriter
+from htmlcreator import htmlcreator as htmlcreator
 
 #Initialize directories for data and the html files
 HOME='home/'
@@ -11,17 +12,12 @@ HTML='home/html'
 log='home/id.txt'
 res='home/res'
 
+#these are all the downloads required after you install ntlk, uncomment them on the first run then comment them again to skip unnecessary request to download them
 '''nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
 nltk.download('averaged_perceptron_tagger')
-
-from nltk.tokenize import sent_tokenize
-
-text="""Hello Mr. Smith, how are you doing today? The weather is great, and city is awesome. The sky is pinkish-blue. You shouldn't eat cardboard"""
-
-tokenized_text=sent_tokenize(text)
-print (tokenized_text)'''
+'''
 
 #initialize praw to certain subreddit
 def startRedditBot(subname):
@@ -70,6 +66,7 @@ for info in data:
     for i in info[0]:
         print(i)
         writer.write(i,list(info[1]))        
-dictwriter.close()
 
+dictwriter.close()
+htmlcreator.createAll()
 addToLogs()
