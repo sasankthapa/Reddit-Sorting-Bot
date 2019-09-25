@@ -14,3 +14,11 @@ HOW TO USE::
 put the labels that you want to process in labels.txt file, 
 run main.py and enter the name of the subreddit you want to sort
 open HTML pages and learn from these posts!
+
+------------------------------------------------------------
+
+TO DOs:
+
+-Need to add a linking hyperlink between the HTML pages
+-Remove the Debug prints that print in python shell
+
